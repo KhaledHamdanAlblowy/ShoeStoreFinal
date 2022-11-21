@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FirstProjectShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Password_hint">Enter Password</string>
+    <string name="userID_hint">Enter User Name</string>
+    <string name="ShoeStore_Login_Page">ShoeStore Login Page</string>
+    <string name="Remember_me">Remember Me</string>
+    <string name="Log_in">Log In</string>
+    <string name="Sign_in">Sign In</string>
+    <string name="user_name">User Name</string>
+    <string name="welcome_to_the_shoestore">Welcome to the Shoestore</string>
+    <string name="to_proceed_to_instructions_click_on_the_button_below">To Proceed to Instructions, Click on the button bellow</string>
+    <string name="Go_to_Instructions">"Go to Instructions "</string>
+</resources>
