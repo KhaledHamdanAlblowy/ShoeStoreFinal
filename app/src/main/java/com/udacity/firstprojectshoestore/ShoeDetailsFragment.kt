@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeDetailsBinding
@@ -16,7 +17,7 @@ import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
 
 class ShoeDetailsFragment : Fragment() {
 
-    private val viewModel: ViewModel by activityViewModels()
+    private lateinit var viewModel: ShoeViewModel
 
 
     override fun onCreateView(
@@ -27,9 +28,19 @@ class ShoeDetailsFragment : Fragment() {
         val binding: FragmentShoeDetailsBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_details, container, false)
 
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
-        binding.AddButton.setOnClickListener(){
-                view : View ->
+        binding.AddButton.setOnClickListener(){ view : View ->
+
+            val shoeAdded = Shoe(
+                viewModel.shoe.shoeName,
+                viewModel.shoe.shoeSize
+            ,viewModel.shoe.shoeCompany,
+            viewModel.shoe.shoeDescription)
+
+            viewModel.addShoe(shoeAdded)
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
 
         }

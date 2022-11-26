@@ -1,14 +1,13 @@
 package com.udacity.firstprojectshoestore
 
-import androidx.databinding.adapters.ViewGroupBindingAdapter.OnChildViewAdded
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
-class ViewModel {
+class ShoeViewModel : ViewModel() {
 
     var shoe = Shoe("", "", "", "")
 
-    var listOfShoes = MutableLiveData<MutableList<Shoe>>()
-
+    val listOfShoes = MutableLiveData<MutableList<Shoe>>()
 
     fun addShoe(shoeAdded: Shoe) {
         listOfShoes.value?.add(shoeAdded)
