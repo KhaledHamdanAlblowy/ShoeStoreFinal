@@ -13,7 +13,7 @@ import com.udacity.firstprojectshoestore.databinding.FragmentWelcomeBinding
 
 class ShoeListFragment : Fragment() {
 
-
+var shoe :Shoe = Shoe("khaled","kha","kha","kha")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,7 +27,8 @@ class ShoeListFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener(){ view : View ->
             Navigation.findNavController(view).navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
         }
-        val v = LayoutInflater.from(context).inflate(R.layout.shoe_item_card_layout,null, false, )
+
+        val v = LayoutInflater.from(context).inflate(R.layout.shoe_item_card_layout,null, false )
         binding.LinearLayoutList.addView(v)
         return binding.root
     }
