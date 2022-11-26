@@ -12,4 +12,6 @@
     <string name="welcome_to_the_shoestore">Welcome to the Shoestore</string>
     <string name="to_proceed_to_instructions_click_on_the_button_below">To Proceed to Instructions, Click on the button bellow</string>
     <string name="Go_to_Instructions">"Go to Instructions "</string>
+    <string name="scrollView">scrollView</string>
+    <string name="Add_Shoe">Add Shoe</string>
 </resources>
