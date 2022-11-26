@@ -2,9 +2,13 @@ package com.udacity.firstprojectshoestore
 
 import android.os.Bundle
 import android.view.*
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
+import com.udacity.firstprojectshoestore.databinding.FragmentWelcomeBinding
 
 
 class ShoeListFragment : Fragment() {
@@ -16,7 +20,15 @@ class ShoeListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_shoe_list, container, false)
+
+        val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_shoe_list, container, false
+        )
+        binding.floatingActionButton.setOnClickListener(){
+            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailsFragment)
+        }
+
+        return binding.root
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
