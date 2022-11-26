@@ -8,10 +8,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
-import com.udacity.firstprojectshoestore.databinding.FragmentWelcomeBinding
+import com.udacity.firstprojectshoestore.databinding.ShoeItemCardLayoutBinding
 
 
 class ShoeListFragment : Fragment() {
+    private lateinit var cardbinding: ShoeItemCardLayoutBinding
 
 var shoe :Shoe = Shoe("khaled","kha","kha","kha")
     override fun onCreateView(
@@ -28,8 +29,11 @@ var shoe :Shoe = Shoe("khaled","kha","kha","kha")
             Navigation.findNavController(view).navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
         }
 
-        val v = LayoutInflater.from(context).inflate(R.layout.shoe_item_card_layout,null, false )
+        val listItemBinding = ShoeItemCardLayoutBinding.inflate(layoutInflater, null, false)
+        val v = LayoutInflater.from(context).inflate(R.layout.shoe_item_card_layout, null )
+        listItemBinding.shoe = shoe
         binding.LinearLayoutList.addView(v)
+
         return binding.root
     }
 
