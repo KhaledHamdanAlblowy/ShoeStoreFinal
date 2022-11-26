@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeDetailsBinding
@@ -13,6 +15,8 @@ import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
 
 
 class ShoeDetailsFragment : Fragment() {
+
+    private val viewModel: ViewModel by activityViewModels()
 
 
     override fun onCreateView(

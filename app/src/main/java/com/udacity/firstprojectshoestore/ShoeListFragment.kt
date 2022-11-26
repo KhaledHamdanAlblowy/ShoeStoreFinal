@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModel
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -13,6 +15,7 @@ import com.udacity.firstprojectshoestore.databinding.ShoeItemCardLayoutBinding
 
 class ShoeListFragment : Fragment() {
     private lateinit var cardbinding: ShoeItemCardLayoutBinding
+    private val viewModel: ViewModel by activityViewModels()
 
 var shoe :Shoe = Shoe("khaled","kha","kha","kha")
     override fun onCreateView(
