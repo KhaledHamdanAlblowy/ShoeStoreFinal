@@ -14,7 +14,6 @@ import com.udacity.firstprojectshoestore.databinding.ShoeItemCardLayoutBinding
 
 
 class ShoeListFragment : Fragment() {
-    private lateinit var cardbinding: ShoeItemCardLayoutBinding
     private val viewModel: ViewModel by activityViewModels()
 
 var shoe :Shoe = Shoe("khaled","kha","kha","kha")
@@ -24,7 +23,6 @@ var shoe :Shoe = Shoe("khaled","kha","kha","kha")
     ): View? {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
-
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
@@ -32,10 +30,10 @@ var shoe :Shoe = Shoe("khaled","kha","kha","kha")
             Navigation.findNavController(view).navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
         }
 
-        val listItemBinding = ShoeItemCardLayoutBinding.inflate(layoutInflater, null, false)
-        val v = LayoutInflater.from(context).inflate(R.layout.shoe_item_card_layout, null )
-        listItemBinding.shoe = shoe
-        binding.LinearLayoutList.addView(v)
+        val itemBinding = ShoeItemCardLayoutBinding.inflate(layoutInflater)
+        itemBinding.shoe = shoe
+        binding.LinearLayoutList.addView(itemBinding.root)
+
 
         return binding.root
     }

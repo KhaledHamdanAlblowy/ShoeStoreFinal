@@ -27,6 +27,7 @@ class ShoeDetailsFragment : Fragment() {
         val binding: FragmentShoeDetailsBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_details, container, false)
 
+
         binding.AddButton.setOnClickListener(){
                 view : View ->
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)

@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:backgroundTint="@color/colorPrimary"
         android:orientation="vertical">
 
@@ -20,8 +21,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:padding="15dp"
             app:cardCornerRadius="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -30,17 +31,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:background="#F6D55C"
+                    android:padding="10dp"
                     android:text="@={shoe.shoeName}"
                     android:textSize="20sp" />
 
@@ -48,25 +47,24 @@
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:background="#F6D55C"
+                    android:layout_weight="1"
+                    android:padding="10dp"
                     android:text="@={shoe.shoeSize}" />
 
                 <TextView
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#F6D55C"
+                    android:layout_weight="1"
+                    android:padding="10dp"
                     android:text="@={shoe.shoeCompany}" />
 
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_marginStart="0dp"
-                    android:layout_marginEnd="0dp"
-                    android:background="#F6D55C"
+                    android:layout_weight="1"
+                    android:padding="10dp"
                     android:text="@={shoe.shoeDescription}" />
             </LinearLayout>
 
