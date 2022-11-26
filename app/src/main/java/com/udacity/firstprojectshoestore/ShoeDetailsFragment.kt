@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeDetailsBinding
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
 
@@ -23,7 +24,9 @@ class ShoeDetailsFragment : Fragment() {
             inflater, R.layout.fragment_shoe_details, container, false)
 
         binding.AddButton.setOnClickListener(){
-            Navigation.createNavigateOnClickListener(R.id.action_shoeDetailsFragment_to_shoeListFragment)
+                view : View ->
+            Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
+
         }
     return binding.root
     }
