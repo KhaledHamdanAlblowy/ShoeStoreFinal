@@ -1,6 +1,7 @@
 package com.udacity.firstprojectshoestore
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,7 @@ class ShoeDetailsFragment : Fragment() {
             viewModel.shoe.shoeDescription)
 
             viewModel.addShoe(shoeAdded)
+            Log.i("ShoeDetailsFragment", "@{() -> viewModel.listOfShoes.value}")
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
 
         }
