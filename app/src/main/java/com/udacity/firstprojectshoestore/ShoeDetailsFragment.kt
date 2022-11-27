@@ -19,6 +19,7 @@ import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
 class ShoeDetailsFragment : Fragment() {
 
     private lateinit var viewModel: ShoeViewModel
+    private lateinit var binding: FragmentShoeDetailsBinding
 
 
     override fun onCreateView(
@@ -26,12 +27,11 @@ class ShoeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding: FragmentShoeDetailsBinding = DataBindingUtil.inflate(
+         binding= DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_details, container, false)
 
         viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
         binding.viewModel = viewModel
-        binding.lifecycleOwner = this
 
         binding.AddButton.setOnClickListener(){ view : View ->
 
@@ -42,12 +42,19 @@ class ShoeDetailsFragment : Fragment() {
             viewModel.shoe.shoeDescription)
 
             viewModel.addShoe(shoeAdded)
-            Log.i("ShoeDetailsFragment", "@{() -> viewModel.listOfShoes.value}")
+            binding.ShoeNameEditText.text.clear()
+            binding.ShoeSizeEditText.text.clear()
+            binding.ShoeCompanyEditText.text.clear()
+            binding.ShoeDescrEditText.text.clear()
+
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
 
         }
     return binding.root
     }
 
+    override fun onDestroyView() {
 
+        super.onDestroyView()
+    }
 }

@@ -3,5 +3,6 @@
 
     <item
         android:id="@+id/loginFragment2"
+        android:actionLayout="@layout/fragment_loging"
         android:title="Log Out" />
 </menu>
