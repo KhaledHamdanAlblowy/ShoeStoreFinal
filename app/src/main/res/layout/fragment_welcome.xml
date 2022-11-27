@@ -19,14 +19,14 @@
             android:text="@string/welcome_to_the_shoestore"
             android:textAlignment="center"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/info_welcome_page"
+            app:layout_constraintBottom_toTopOf="@+id/Instructions_page"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/info_welcome_page"
+            android:id="@+id/Instructions_page"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -51,7 +51,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/info_welcome_page"
+            app:layout_constraintTop_toBottomOf="@+id/Instructions_page"
             app:layout_constraintVertical_bias="0.179" />
 
 

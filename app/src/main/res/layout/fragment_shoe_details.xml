@@ -23,7 +23,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="56dp"
             android:layout_marginEnd="24dp"
-            android:text="Enter Shoe information "
+            android:text="@string/enter_shoe_information"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +38,14 @@
             android:layout_marginTop="76dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="Enter Shoe Name"
+            android:hint="@string/enter_shoe_name"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_info_textView" />
+            app:layout_constraintTop_toBottomOf="@+id/shoe_info_textView"
+            android:importantForAutofill="no" />
 
         <EditText
             android:text="@={viewModel.shoe.shoeSize}"
@@ -55,13 +56,15 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="Enter Shoes Size"
+            android:hint="@string/enter_shoes_size"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Shoe_Name_editText" />
+            app:layout_constraintTop_toBottomOf="@+id/Shoe_Name_editText"
+            android:importantForAutofill="no"
+            tools:ignore="TextFields" />
 
         <EditText
             android:text="@={viewModel.shoe.shoeCompany}"
@@ -71,12 +74,13 @@
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="Enter Shoes Company"
+            android:hint="@string/enter_shoes_company"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Shoe_size_editText" />
+            app:layout_constraintTop_toBottomOf="@+id/Shoe_size_editText"
+            android:importantForAutofill="no" />
 
         <EditText
             android:text="@={viewModel.shoe.shoeDescription}"
@@ -87,20 +91,21 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:ems="10"
-            android:hint="Enter Description"
+            android:hint="@string/enter_description"
             android:inputType="textPersonName"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Shoe_Company_EditText" />
+            app:layout_constraintTop_toBottomOf="@+id/Shoe_Company_EditText"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/Add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="120dp"
-            android:text="Add"
+            android:text="@string/add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

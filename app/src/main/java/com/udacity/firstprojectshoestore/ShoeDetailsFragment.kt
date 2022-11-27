@@ -1,19 +1,16 @@
 package com.udacity.firstprojectshoestore
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeDetailsBinding
-import com.udacity.firstprojectshoestore.databinding.FragmentShoeListBinding
+import kotlin.time.Duration
 
 
 class ShoeDetailsFragment : Fragment() {
@@ -25,8 +22,7 @@ class ShoeDetailsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
          binding= DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_details, container, false)
 
@@ -34,27 +30,34 @@ class ShoeDetailsFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.AddButton.setOnClickListener(){ view : View ->
+        if (binding.ShoeNameEditText.text.isEmpty() ||
+            binding.ShoeSizeEditText.text.isEmpty() ||
+            binding.ShoeDescrEditText.text.isEmpty() ||
+            binding.ShoeCompanyEditText.text.isEmpty() ){
+
+            val toast = Toast.makeText(context, "Please Fill all Fields", Toast.LENGTH_SHORT)
+            toast.show()
+        }
+            else {
 
             val shoeAdded = Shoe(
                 viewModel.shoe.shoeName,
                 viewModel.shoe.shoeSize
-            ,viewModel.shoe.shoeCompany,
-            viewModel.shoe.shoeDescription)
+                ,viewModel.shoe.shoeCompany,
+                viewModel.shoe.shoeDescription)
 
             viewModel.addShoe(shoeAdded)
+
             binding.ShoeNameEditText.text.clear()
             binding.ShoeSizeEditText.text.clear()
             binding.ShoeCompanyEditText.text.clear()
             binding.ShoeDescrEditText.text.clear()
 
             Navigation.findNavController(view).navigate(R.id.action_shoeDetailsFragment_to_shoeListFragment)
+        }
 
         }
     return binding.root
     }
 
-    override fun onDestroyView() {
-
-        super.onDestroyView()
-    }
 }

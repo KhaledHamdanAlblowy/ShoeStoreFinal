@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/loginFragment2"
-        android:actionLayout="@layout/fragment_loging"
-        android:title="Log Out" />
+        android:title="@string/log_out">
+    </item>
 </menu>

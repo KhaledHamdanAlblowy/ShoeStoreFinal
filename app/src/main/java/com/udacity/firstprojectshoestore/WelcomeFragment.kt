@@ -12,7 +12,6 @@ import com.udacity.firstprojectshoestore.databinding.FragmentWelcomeBinding
 class WelcomeFragment : Fragment() {
 
 
-    //all good untill this point
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -4,22 +4,20 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 tools:context=".ShoeListFragment">
-
     <data>
         <variable
             name="viewModel"
             type="com.udacity.firstprojectshoestore.ShoeViewModel" />
     </data>
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ScrollView
             android:id="@+id/scrollView2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="80dp"
             android:contentDescription="@string/scrollView"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +30,10 @@ tools:context=".ShoeListFragment">
                 android:id="@+id/Linear_Layout_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -44,9 +45,11 @@ tools:context=".ShoeListFragment">
             android:clickable="true"
             android:contentDescription="@string/Add_Shoe"
             android:src="@android:drawable/ic_input_add"
+            app:backgroundTint="#313DB6"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+            app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+            android:focusable="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
