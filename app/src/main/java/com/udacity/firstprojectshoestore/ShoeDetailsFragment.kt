@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.udacity.firstprojectshoestore.databinding.FragmentShoeDetailsBinding
@@ -27,6 +28,8 @@ class ShoeDetailsFragment : Fragment() {
             inflater, R.layout.fragment_shoe_details, container, false)
 
         viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+        binding.lifecycleOwner = this
+
         binding.viewModel = viewModel
 
         binding.AddButton.setOnClickListener(){ view : View ->
@@ -57,7 +60,10 @@ class ShoeDetailsFragment : Fragment() {
         }
 
         }
+
+
     return binding.root
     }
+
 
 }

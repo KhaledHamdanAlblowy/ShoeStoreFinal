@@ -19,6 +19,6 @@ class ShoeViewModel : ViewModel() {
 
     private fun originShoeList(): MutableList<Shoe> {
         return mutableListOf(
-            Shoe("Air Speed", "Nike", "44", "Nike is so good"))
+            Shoe("Shoe", "24", "Adidas", "Adidas is so good"))
     }
 }

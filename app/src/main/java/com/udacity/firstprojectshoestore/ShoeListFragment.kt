@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
@@ -21,10 +22,10 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false
         )
+
         setHasOptionsMenu(true)
         viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
         binding.lifecycleOwner = this
-
         viewModel.listOfShoes.observe(viewLifecycleOwner, Observer {
             shoeList -> for (shoe in shoeList){
             val itemBinding = ShoeItemCardLayoutBinding.inflate(layoutInflater)
@@ -32,7 +33,6 @@ class ShoeListFragment : Fragment() {
             binding.LinearLayoutList.addView(itemBinding.root)
         }
         })
-
         binding.floatingActionButton.setOnClickListener(){ view : View ->
             Navigation.findNavController(view).navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
 
@@ -50,7 +50,7 @@ class ShoeListFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.loginFragment2 -> {
-                LoginFragment()
+                view?.let { Navigation.findNavController(it).navigate(R.id.action_shoeListFragment_to_loginFragment2) }
                 true
             }
             else -> super.onOptionsItemSelected(item)
