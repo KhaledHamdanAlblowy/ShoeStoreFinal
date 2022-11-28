@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">FirstProjectShoeStore</string>
+    <string name="app_name">ShoeStore</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Password_hint">Enter Password</string>
     <string name="userID_hint">Enter User Name</string>
     <string name="ShoeStore_Login_Page">ShoeStore Login Page</string>
@@ -26,7 +25,12 @@
     <string name="steps">Steps</string>
     <string name="go_to_shoe_list">Go to Shoe List</string>
     <string name="instructions_page">Instructions</string>
-    <string name="_1_click_button_below">1. Click Button below</string>
-    <string name="_2_list_of_shoes_will_be_shown_if_there_is_any">2. List of Shoes will be Shown if there is any</string>
-    <string name="_3_tab_the_floating_button_in_the_next_screen_to_add_new_shoes">3. Tab the floating button in the next screen to add new shoes</string>
+    <string name="cancel">Cancel</string>
+    <string name="InstrcutionsNumbered" >
+        1. Click Button below
+        2. List of Shoes will
+            be Shown if there is any
+        3. Tab the floating button in
+            the next screen to add new shoes
+    </string>
 </resources>

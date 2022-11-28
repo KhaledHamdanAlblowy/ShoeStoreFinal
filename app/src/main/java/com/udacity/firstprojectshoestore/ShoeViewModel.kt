@@ -10,15 +10,14 @@ class ShoeViewModel : ViewModel() {
     val listOfShoes = MutableLiveData<MutableList<Shoe>>()
 
     init {
-        listOfShoes.value = originShoeList()
+        listOfShoes.value = mutableListOf(
+            Shoe("Shoe", "24", "Adidas", "Adidas is so good")
+        )
 
     }
+
     fun addShoe(shoeAdded: Shoe) {
         listOfShoes.value?.add(shoeAdded)
     }
 
-    private fun originShoeList(): MutableList<Shoe> {
-        return mutableListOf(
-            Shoe("Shoe", "24", "Adidas", "Adidas is so good"))
-    }
 }
