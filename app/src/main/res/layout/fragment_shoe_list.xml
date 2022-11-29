@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ShoeListFragment">
 
+    <!--    The constraint Layout is used to make the page responsive when rotating and to multiple devices it adjust accordingly
+    it basically Allows me to size and position the views in a flexible easy way-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
